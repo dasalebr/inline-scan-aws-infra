@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "codepipeline_bucket" {
-  bucket = "test-code-pipeline-bucket"
+  bucket = "testing-code-pipeline-bucket"
   acl    = "private"
 }
 
