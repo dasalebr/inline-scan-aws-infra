@@ -1,5 +1,6 @@
 resource "aws_s3_bucket" "codepipeline_bucket" {
   bucket = "testing-code-pipeline-bucket"
+  force_destroy = true
   acl    = "private"
 }
 
@@ -46,7 +47,7 @@ resource "aws_codepipeline" "codepipeline" {
       version          = "1"
 
       configuration = {
-        ProjectName = var.project_name
+        ProjectName = aws_codebuild_project.example.name
       }
     }
   }

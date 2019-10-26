@@ -44,7 +44,7 @@ resource "aws_iam_role_policy" "codepipeline_policy" {
         "codebuild:BatchGetBuilds",
         "codebuild:StartBuild"
       ],
-      "Resource": "*"
+      "Resource": "${aws_codebuild_project.example.arn}"
     }
   ]
 }
