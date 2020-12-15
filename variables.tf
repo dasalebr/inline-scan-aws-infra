@@ -37,3 +37,8 @@ variable "docker_login_password" {
 variable "sysdig_api_token" {
   type = string
 }
+
+variable "github_token" {
+  type = string
+}
+

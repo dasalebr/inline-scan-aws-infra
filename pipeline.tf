@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "codepipeline_bucket" {
-  bucket = "testing-code-pipeline-bucket"
+  bucket = "${var.project_name}-pipeline-bucket"
   force_destroy = true
   acl    = "private"
 }
@@ -30,6 +30,7 @@ resource "aws_codepipeline" "codepipeline" {
         Owner  = var.repo_owner
         Repo   = var.repo_name
         Branch = var.repo_branch
+        OAuthToken = var.github_token
       }
     }
   }

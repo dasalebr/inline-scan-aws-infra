@@ -1,5 +1,5 @@
 resource "aws_iam_role" "example" {
-  name = "codebuild-role-example"
+  name = "${var.project_name}-codebuild-role-example"
 
   assume_role_policy = <<EOF
 {
@@ -91,9 +91,9 @@ resource "aws_codebuild_project" "example" {
   }
 
   environment {
-    compute_type                = "BUILD_GENERAL1_SMALL"
-    image                       = "docker:dind"
     type                        = "LINUX_CONTAINER"
+    compute_type                = "BUILD_GENERAL1_SMALL"
+    image                       = "aws/codebuild/standard:3.0"
     image_pull_credentials_type = "CODEBUILD"
     privileged_mode             = true
   }
