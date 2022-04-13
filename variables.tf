@@ -23,7 +23,7 @@ variable "repo_branch" {
 }
 
 variable "git_project" {
-  default = "https://github.com/sysdiglabs/dummy-vuln-app.git"
+  default = "https://github.com/dasalebr/inline-scan-aws-infra.git"
 }
 
 variable "docker_login_user" {
